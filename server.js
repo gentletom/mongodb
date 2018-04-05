@@ -23,15 +23,11 @@ app.use(bodyParser.urlencoded({
 
 
 // Save MongoDB directory to a db var
-var db = 'mongodb://localhost/mongoHeadlines';
+var db = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
 
-mongoose.connect(db, function(err){
-  if(err){
-    console.log(err);
-  } 
-  else {
-    console.log('mongoose connection is sucessful');
-  }
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
 });
 
 // bring in our routes file into the the server files
