@@ -31,7 +31,7 @@ mongoose.connect(db, {
 });
 
 // bring in our routes file into the the server files
-var routes = require('./config/routes.js');
+var routes = require('./config/route.js');
 
 // Incorporate these routes into our app
 app.use('/', routes);
