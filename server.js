@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 var db = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(db, {
   useMongoClient: true
 });
 
